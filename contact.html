@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Responsive Contact Us Page</title>
+    <script src="https://kit.fontawesome.com/c32adfdcda.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="static/style/contact.css">
+</head>
+<body>
+<!--Header area page !!!-->
+<header class="header-area">
+    <div class="header-container">
+        <div class="site-logo">
+            <a href="#">Tech<span>Future</span></a>
+        </div>
+        <div class="mobile-nav">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="site-nav-menu">
+            <ul class="primary-menu">
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/service">Services</a></li>
+                <li><a href="/comingsoon">location</a></li>
+                <li><a href="#">Account</a>
+                    <div class="sub-menu-1">
+                        <ul>
+                            <li><a href="/login">Login</a></li>
+                            <li><a href="/signup">SignUp</a></li>
+                        </ul>
+                    </div>
+
+                </li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/comingsoon">Tech News</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<!--Section page-->
+
+<section>
+
+    <div class="section-header">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis dignissimos eaque doloremque, nulla
+                mollitia facilis temporibus ullam voluptas nostrum consequatur? Fugiat vitae sint quo est eveniet
+                perspiciatis eum asperiores ipsam.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="contact-info">
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+
+                    <div class="contact-info-content">
+                        <h4>Address</h4>
+                        <p>Acacia, Acacia primer villa ,<br/> Kitengela, Kajiado, <br/>00200</p>
+                    </div>
+                </div>
+
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+
+                    <div class="contact-info-content">
+                        <h4>Phone</h4>
+                        <p>0745983042</p>
+                    </div>
+                </div>
+
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+
+                    <div class="contact-info-content">
+                        <h4>Email</h4>
+                        <p>terahjones3@email.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+
+                <h2>Send A Message</h2>
+                {%for message in form.name.errors%}
+                <div class="flash">
+                    {{message}}
+                </div>
+                {%endfor%}
+                {%for message in form.email.errors%}
+                <div class="flash">
+                    {{message}}
+                </div>
+                {%endfor%}
+                {%for message in form.message.errors%}
+                <div class="flash">
+                    {{message}}
+                </div>
+                {%endfor%}
+                <form action="{{url_for('contact')}}" method="get">
+                    {{form.hidden_tag()}}
+                    <div class="input-box">
+                        {{form.name}}
+                        <span>Full Name</span>
+                    </div>
+
+                    <div class="input-box">
+                        {{form.email}}
+                        <span>Email</span>
+                    </div>
+
+                    <div class="input-box">
+                        {{form.message}}
+                        <span>Type your Message...</span>
+                    </div>
+
+                    <div class="input-box">
+                        {{form.submit}}
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
+<footer>Designed By TechFuture, Copyright &copy;2022</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="static/javascript/home.js"></script>
+
+</body>
+</html>
